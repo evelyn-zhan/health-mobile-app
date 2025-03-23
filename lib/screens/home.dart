@@ -200,7 +200,8 @@ class Home extends StatelessWidget {
                       onPressed: () {
                         Navigator.push(context, MaterialPageRoute(builder: (context) => Articles()));
                       },
-                      child: Text('See More Articles', style: GoogleFonts.poppins(color: Colors.black, fontSize: 12, fontWeight: FontWeight.w500, decoration: TextDecoration.underline))
+                      style: TextButton.styleFrom(overlayColor: Colors.transparent),
+                      child: Text('See More Articles', style: GoogleFonts.poppins(color: Colors.black, fontSize: 13, fontWeight: FontWeight.w500, decoration: TextDecoration.underline))
                     )
                   ]
                 )
