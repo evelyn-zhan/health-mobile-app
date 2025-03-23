@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:health_mobile_app/components/article_card.dart';
+import 'package:health_mobile_app/components/featured_article_card.dart';
 import 'package:health_mobile_app/screens/articles.dart';
 
 class Home extends StatelessWidget {
@@ -209,19 +209,19 @@ class Home extends StatelessWidget {
                 clipBehavior: Clip.none,
                 child: Row(
                   children: [
-                    ArticleCard(
+                    FeaturedArticleCard(
                       imageUrl: 'assets/article-1.png',
                       title: 'Why Sleep is Your Superpower for Better Health',
                       summary: 'Sleeping 100 hours will make you healthy'
                     ),
                     SizedBox(width: 10),
-                    ArticleCard(
+                    FeaturedArticleCard(
                       imageUrl: 'assets/article-3.jpg',
                       title: 'Hydration Hacks: Drink Smarter, Stay Healthier',
                       summary: 'Simple ways to track water intake and avoid dehydration'
                     ),
                     SizedBox(width: 10),
-                    ArticleCard(
+                    FeaturedArticleCard(
                       imageUrl: 'assets/article-4.jpg',
                       title: 'Superfoods You Should Eat Every Week',
                       summary: 'Nutrient-packed foods to improve overall well-being'

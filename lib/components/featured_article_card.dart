@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ArticleCard extends StatelessWidget {
-  const ArticleCard({super.key, required this.imageUrl, required this.title, required this.summary});
+class FeaturedArticleCard extends StatelessWidget {
+  const FeaturedArticleCard({super.key, required this.imageUrl, required this.title, required this.summary});
 
   final String imageUrl, title, summary;
 
