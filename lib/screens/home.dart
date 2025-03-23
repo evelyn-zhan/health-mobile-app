@@ -15,7 +15,7 @@ class Home extends StatelessWidget {
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Padding(
-          padding: EdgeInsets.fromLTRB(20, 70, 20, 40),
+          padding: EdgeInsets.fromLTRB(20, 75, 20, 40),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -162,7 +162,7 @@ class Home extends StatelessWidget {
                   ]
                 )
               ),
-              SizedBox(height: 15),
+              SizedBox(height: 10),
               Container(
                 width: double.infinity, height: 80,
                 padding: EdgeInsets.all(15),
@@ -206,7 +206,7 @@ class Home extends StatelessWidget {
                   ]
                 )
               ),
-              SizedBox(height: 15),
+              SizedBox(height: 10),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 clipBehavior: Clip.none,

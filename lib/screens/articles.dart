@@ -33,7 +33,7 @@ class _ArticlesState extends State<Articles> {
     return Scaffold(
       backgroundColor: Color(0xFFFAFAFA),
       body: Padding(
-        padding: EdgeInsets.fromLTRB(15, 70, 15, 40),
+        padding: EdgeInsets.fromLTRB(15, 75, 15, 40),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
