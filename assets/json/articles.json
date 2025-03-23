@@ -1,0 +1,42 @@
+[
+    {
+        "imageUrl": "assets/article-page-1.png",
+        "title": "Why Sleep is Your Superpower for Better Health",
+        "dateCreated": "18 Mar 2025",
+        "description": "Discover how quality sleep can boost your health, improve focus, and increase longevity.",
+        "detail": [
+            "Sleep is often overlooked, but it is one of the most powerful tools for maintaining overall health. When you sleep, your body repairs tissues, strengthens the immune system, and consolidates memories, making it crucial for both physical and mental well-being. Poor sleep can lead to cognitive decline, weakened immunity, and an increased risk of chronic conditions such as heart disease and diabetes. Studies have shown that individuals who consistently get less than six hours of sleep per night are more prone to stress, mood swings, and reduced productivity.",
+            "To improve sleep quality, it's important to establish a consistent nighttime routine. Avoiding screens at least an hour before bed, creating a relaxing environment, and maintaining a regular sleep schedule can help regulate the body's internal clock. Foods rich in magnesium and melatonin, such as almonds, bananas, and cherries, can also support better sleep. Making sleep a priority isn't just about feeling rested—it's a key factor in long-term health and vitality."
+        ]
+    },
+    {
+        "imageUrl": "assets/article-page-1.png",
+        "title": "Morning Walks: The Secret to a Healthier You",
+        "dateCreated": "05 Feb 2025",
+        "description": "Learn why a simple morning walk can transform your physical and mental health.",
+        "detail": [
+            "Starting your day with a morning walk is one of the simplest yet most effective ways to boost your overall health. A brisk walk in the fresh air stimulates circulation, enhances cardiovascular fitness, and helps regulate blood sugar levels. It also promotes the release of endorphins, the body's natural feel-good hormones, reducing stress and anxiety. Many studies suggest that individuals who engage in regular morning walks have improved mental clarity, better focus, and greater energy levels throughout the day.",
+            "Beyond the immediate benefits, morning walks contribute to long-term health improvements. Exposure to early sunlight helps regulate your circadian rhythm, improving sleep quality at night. Additionally, walking outdoors allows you to connect with nature, which has been linked to lower levels of cortisol, the stress hormone. To build the habit, start with a 10-minute walk and gradually increase the duration. Whether you prefer walking alone, with a friend, or listening to a podcast, incorporating this simple activity into your routine can lead to lasting health benefits."
+        ]
+    },
+    {
+        "imageUrl": "assets/article-page-1.png",
+        "title": "Hydration Hacks: Drink Smarter, Stay Healthier",
+        "dateCreated": "01 Jan 2025",
+        "description": "Practical tips to stay hydrated and keep your body functioning at its best.",
+        "detail": [
+            "Proper hydration is essential for maintaining energy levels, supporting digestion, and regulating body temperature. Many people underestimate their daily water needs, leading to fatigue, headaches, and even poor concentration. Hydration doesn't just mean drinking plain water—it includes consuming water-rich foods like cucumbers, watermelon, and oranges, which help replenish lost fluids while providing essential vitamins and minerals. Additionally, herbal teas and infused water with lemon or mint can make hydration more enjoyable.",
+            "One of the easiest ways to ensure adequate water intake is to make hydration a habit. Carrying a reusable water bottle, setting reminders on your phone, or using apps that track your water consumption can help. It's also helpful to drink a glass of water before meals to aid digestion and prevent overeating. If you're physically active, increasing your water intake is crucial to compensate for fluids lost through sweat. By drinking smarter and making hydration a priority, you can enhance overall well-being and maintain optimal body function."
+        ]
+    },
+    {
+        "imageUrl": "assets/article-page-1.png",
+        "title": "Simple Ways to Track Water Intake and Avoid Dehydration",
+        "dateCreated": "06 Dec 2024",
+        "description": "Easy methods to ensure you're drinking enough water daily.",
+        "detail": [
+            "Many people struggle with drinking enough water throughout the day, often leading to dehydration without realizing it. Dehydration can cause dizziness, fatigue, dry skin, and even muscle cramps. One simple method to track your water intake is the '8x8 rule,' which suggests drinking eight 8-ounce glasses of water daily. However, water needs vary depending on activity level, climate, and individual health conditions. Instead of relying solely on thirst cues, setting measurable hydration goals can be more effective.",
+            "Using a marked water bottle with time-based drinking targets or hydration-tracking apps can help keep you accountable. Other easy methods include drinking a glass of water first thing in the morning, before meals, and after every bathroom visit. If you find plain water boring, try adding natural flavors like lemon, berries, or cucumber to make it more enjoyable. By implementing these simple habits, you can prevent dehydration, improve energy levels, and keep your body functioning at its best."
+        ]
+    }
+]
