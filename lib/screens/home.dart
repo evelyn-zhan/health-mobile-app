@@ -9,7 +9,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFF9F9F9),
+      backgroundColor: Color(0xFFFAFAFA),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Padding(
