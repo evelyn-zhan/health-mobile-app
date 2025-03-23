@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:health_mobile_app/components/article_card.dart';
+import 'package:health_mobile_app/components/featured_article_card.dart';
+import 'package:health_mobile_app/screens/articles.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -12,7 +13,7 @@ class Home extends StatelessWidget {
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(20, 70, 20, 40),
+          padding: EdgeInsets.fromLTRB(20, 70, 20, 40),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -20,8 +21,8 @@ class Home extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
-                    padding: const EdgeInsets.only(left: 5),
+                  Padding(
+                    padding: EdgeInsets.only(left: 5),
                     child: Column(
                       children: [
                         Column(
@@ -44,9 +45,9 @@ class Home extends StatelessWidget {
                 ]
               ),
               SizedBox(height: 30),
-              Container(
-                padding: const EdgeInsets.only(left: 5),
-                child: Text("Today's Health Summary", style: GoogleFonts.poppins(fontSize: 17, fontWeight: FontWeight.w600))
+              Padding(
+                padding: EdgeInsets.only(left: 5),
+                child: Text("Today's Health Summary", style: GoogleFonts.poppins(fontSize: 17, fontWeight: FontWeight.w600)),
               ),
               SizedBox(height: 10),
               Row(
@@ -56,7 +57,7 @@ class Home extends StatelessWidget {
                     flex: 1,
                     child: Container(
                       height: 100,
-                      padding: const EdgeInsets.all(15),
+                      padding: EdgeInsets.all(15),
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(10),
@@ -93,7 +94,7 @@ class Home extends StatelessWidget {
                     flex: 1,
                     child: Container(
                       height: 100,
-                      padding: const EdgeInsets.all(15),
+                      padding: EdgeInsets.all(15),
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(10),
@@ -128,14 +129,14 @@ class Home extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 30),
-              Container(
-                padding: const EdgeInsets.only(left: 5),
-                child: Text('Daily Mission', style: GoogleFonts.poppins(fontSize: 17, fontWeight: FontWeight.w600))
+              Padding(
+                padding: EdgeInsets.only(left: 5),
+                child: Text('Daily Mission', style: GoogleFonts.poppins(fontSize: 17, fontWeight: FontWeight.w600)),
               ),
               SizedBox(height: 10),
               Container(
                 width: double.infinity, height: 80,
-                padding: const EdgeInsets.all(15),
+                padding: EdgeInsets.all(15),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(10),
@@ -162,7 +163,7 @@ class Home extends StatelessWidget {
               SizedBox(height: 15),
               Container(
                 width: double.infinity, height: 80,
-                padding: const EdgeInsets.all(15),
+                padding: EdgeInsets.all(15),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(10),
@@ -187,9 +188,20 @@ class Home extends StatelessWidget {
                 )
               ),
               SizedBox(height: 30),
-              Container(
-                padding: const EdgeInsets.only(left: 5),
-                child: Text('Featured Articles', style: GoogleFonts.poppins(fontSize: 17, fontWeight: FontWeight.w600))
+              Padding(
+                padding: EdgeInsets.only(left: 5),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text('Featured Articles', style: GoogleFonts.poppins(fontSize: 17, fontWeight: FontWeight.w600)),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => Articles()));
+                      },
+                      child: Text('See More Articles', style: GoogleFonts.poppins(color: Colors.black, fontSize: 12, fontWeight: FontWeight.w500, decoration: TextDecoration.underline))
+                    )
+                  ]
+                )
               ),
               SizedBox(height: 15),
               SingleChildScrollView(
@@ -197,19 +209,19 @@ class Home extends StatelessWidget {
                 clipBehavior: Clip.none,
                 child: Row(
                   children: [
-                    ArticleCard(
+                    FeaturedArticleCard(
                       imageUrl: 'assets/article-1.png',
                       title: 'Why Sleep is Your Superpower for Better Health',
                       summary: 'Sleeping 100 hours will make you healthy'
                     ),
                     SizedBox(width: 10),
-                    ArticleCard(
+                    FeaturedArticleCard(
                       imageUrl: 'assets/article-3.jpg',
                       title: 'Hydration Hacks: Drink Smarter, Stay Healthier',
                       summary: 'Simple ways to track water intake and avoid dehydration'
                     ),
                     SizedBox(width: 10),
-                    ArticleCard(
+                    FeaturedArticleCard(
                       imageUrl: 'assets/article-4.jpg',
                       title: 'Superfoods You Should Eat Every Week',
                       summary: 'Nutrient-packed foods to improve overall well-being'
