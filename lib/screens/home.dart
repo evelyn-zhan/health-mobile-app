@@ -12,7 +12,7 @@ class Home extends StatelessWidget {
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(20, 70, 20, 40),
+          padding: EdgeInsets.fromLTRB(20, 70, 20, 40),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -20,8 +20,8 @@ class Home extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
-                    padding: const EdgeInsets.only(left: 5),
+                  Padding(
+                    padding: EdgeInsets.only(left: 5),
                     child: Column(
                       children: [
                         Column(
@@ -44,9 +44,9 @@ class Home extends StatelessWidget {
                 ]
               ),
               SizedBox(height: 30),
-              Container(
-                padding: const EdgeInsets.only(left: 5),
-                child: Text("Today's Health Summary", style: GoogleFonts.poppins(fontSize: 17, fontWeight: FontWeight.w600))
+              Padding(
+                padding: EdgeInsets.only(left: 5),
+                child: Text("Today's Health Summary", style: GoogleFonts.poppins(fontSize: 17, fontWeight: FontWeight.w600)),
               ),
               SizedBox(height: 10),
               Row(
@@ -56,7 +56,7 @@ class Home extends StatelessWidget {
                     flex: 1,
                     child: Container(
                       height: 100,
-                      padding: const EdgeInsets.all(15),
+                      padding: EdgeInsets.all(15),
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(10),
@@ -93,7 +93,7 @@ class Home extends StatelessWidget {
                     flex: 1,
                     child: Container(
                       height: 100,
-                      padding: const EdgeInsets.all(15),
+                      padding: EdgeInsets.all(15),
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(10),
@@ -128,14 +128,14 @@ class Home extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 30),
-              Container(
-                padding: const EdgeInsets.only(left: 5),
-                child: Text('Daily Mission', style: GoogleFonts.poppins(fontSize: 17, fontWeight: FontWeight.w600))
+              Padding(
+                padding: EdgeInsets.only(left: 5),
+                child: Text('Daily Mission', style: GoogleFonts.poppins(fontSize: 17, fontWeight: FontWeight.w600)),
               ),
               SizedBox(height: 10),
               Container(
                 width: double.infinity, height: 80,
-                padding: const EdgeInsets.all(15),
+                padding: EdgeInsets.all(15),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(10),
@@ -162,7 +162,7 @@ class Home extends StatelessWidget {
               SizedBox(height: 15),
               Container(
                 width: double.infinity, height: 80,
-                padding: const EdgeInsets.all(15),
+                padding: EdgeInsets.all(15),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(10),
@@ -187,9 +187,9 @@ class Home extends StatelessWidget {
                 )
               ),
               SizedBox(height: 30),
-              Container(
-                padding: const EdgeInsets.only(left: 5),
-                child: Text('Featured Articles', style: GoogleFonts.poppins(fontSize: 17, fontWeight: FontWeight.w600))
+              Padding(
+                padding: EdgeInsets.only(left: 5),
+                child: Text('Featured Articles', style: GoogleFonts.poppins(fontSize: 17, fontWeight: FontWeight.w600)),
               ),
               SizedBox(height: 15),
               SingleChildScrollView(

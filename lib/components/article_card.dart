@@ -24,13 +24,13 @@ class ArticleCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(8),
             child: Image.asset(imageUrl, width: 150, height: 80, fit: BoxFit.cover),
           ),
-          SizedBox(height: 8),
-            Container(
+          SizedBox(height: 10),
+          Padding(
             padding: EdgeInsets.only(left: 5),
             child: Text(title, style: GoogleFonts.poppins(fontSize: 11, fontWeight: FontWeight.w600)),
           ),
           SizedBox(height: 5),
-          Container(
+          Padding(
             padding: EdgeInsets.only(left: 5),
             child: Text(summary, style: GoogleFonts.poppins(fontSize: 10, fontWeight: FontWeight.w400)),
           )
