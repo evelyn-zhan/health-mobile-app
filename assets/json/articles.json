@@ -45,9 +45,9 @@
     },
     {
         "id" : 5,
-        "img" : "assets/images/article-page-5.jpeg",
-        "dateCreated" : "15 Nov 2024",
+        "imageUrl" : "assets/images/article-page-5.jpeg",
         "title" : "Balanced Diet in Maintaining Long-Term Health",
+        "dateCreated" : "15 Nov 2024",
         "description" : "A balanced diet supports overall health, while processed foods raise risks. Healthy eating and exercise promote well-being and weight management.",
         "detail" : [
           "In today's fast-paced world, maintaining a balanced diet has become increasingly important for preserving long-term health. With an abundance of food options, many of which are processed and high in sugar, salt, and unhealthy fats, it's easy to lose sight of what truly nourishes the body. However, understanding the role of nutrition can make all the difference in achieving a healthy lifestyle.",
