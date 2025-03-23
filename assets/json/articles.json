@@ -1,5 +1,6 @@
 [
     {
+        "id": 1,
         "imageUrl": "assets/images/article-page-1.png",
         "title": "Why Sleep is Your Superpower for Better Health",
         "dateCreated": "18 Mar 2025",
@@ -10,6 +11,7 @@
         ]
     },
     {
+        "id": 2,
         "imageUrl": "assets/images/article-page-2.png",
         "title": "Morning Walks: The Secret to a Healthier You",
         "dateCreated": "05 Feb 2025",
@@ -20,6 +22,7 @@
         ]
     },
     {
+        "id": 3,
         "imageUrl": "assets/images/article-page-3.png",
         "title": "Hydration Hacks: Drink Smarter, Stay Healthier",
         "dateCreated": "01 Jan 2025",
@@ -30,6 +33,7 @@
         ]
     },
     {
+        "id": 4,
         "imageUrl": "assets/images/article-page-4.png",
         "title": "Simple Ways to Track Water Intake and Avoid Dehydration",
         "dateCreated": "06 Dec 2024",
