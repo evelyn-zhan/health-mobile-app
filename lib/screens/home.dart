@@ -11,7 +11,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFF9F9F9),
+      backgroundColor: Color(0xFFFAFAFA),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Padding(
@@ -86,7 +86,7 @@ class Home extends StatelessWidget {
                             ]
                           ),
                           Spacer(),
-                          Image.asset('assets/shoe-icon.png', width: 30, height: 30)
+                          Image.asset('assets/images/shoe-icon.png', width: 30, height: 30)
                         ]
                       )
                     ),
@@ -123,7 +123,7 @@ class Home extends StatelessWidget {
                             ]
                           ),
                           Spacer(),
-                          Image.asset('assets/water-icon.png', width: 28, height: 28)
+                          Image.asset('assets/images/water-icon.png', width: 28, height: 28)
                         ]
                       )
                     ),
@@ -149,7 +149,7 @@ class Home extends StatelessWidget {
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Image.asset('assets/3d-target.png', width: 45, height: 45),
+                    Image.asset('assets/images/3d-target.png', width: 45, height: 45),
                     SizedBox(width: 30),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -176,7 +176,7 @@ class Home extends StatelessWidget {
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Image.asset('assets/mineral-water.png', width: 45, height: 45),
+                    Image.asset('assets/images/mineral-water.png', width: 45, height: 45),
                     SizedBox(width: 30),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -200,7 +200,8 @@ class Home extends StatelessWidget {
                       onPressed: () {
                         Navigator.push(context, MaterialPageRoute(builder: (context) => Articles()));
                       },
-                      child: Text('See More Articles', style: GoogleFonts.poppins(color: Colors.black, fontSize: 12, fontWeight: FontWeight.w500, decoration: TextDecoration.underline))
+                      style: TextButton.styleFrom(overlayColor: Colors.transparent),
+                      child: Text('See More Articles', style: GoogleFonts.poppins(color: Colors.black, fontSize: 13, fontWeight: FontWeight.w500, decoration: TextDecoration.underline))
                     )
                   ]
                 )
@@ -212,19 +213,19 @@ class Home extends StatelessWidget {
                 child: Row(
                   children: [
                     FeaturedArticleCard(
-                      imageUrl: 'assets/article-1.png',
+                      imageUrl: 'assets/images/article-1.png',
                       title: 'Why Sleep is Your Superpower for Better Health',
                       summary: 'Sleeping 100 hours will make you healthy'
                     ),
                     SizedBox(width: 10),
                     FeaturedArticleCard(
-                      imageUrl: 'assets/article-3.jpg',
+                      imageUrl: 'assets/images/article-3.jpg',
                       title: 'Hydration Hacks: Drink Smarter, Stay Healthier',
                       summary: 'Simple ways to track water intake and avoid dehydration'
                     ),
                     SizedBox(width: 10),
                     FeaturedArticleCard(
-                      imageUrl: 'assets/article-4.jpg',
+                      imageUrl: 'assets/images/article-4.jpg',
                       title: 'Superfoods You Should Eat Every Week',
                       summary: 'Nutrient-packed foods to improve overall well-being'
                     )
