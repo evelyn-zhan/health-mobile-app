@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:health_mobile_app/components/article_card.dart';
+import 'package:health_mobile_app/screens/articles.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -189,7 +190,18 @@ class Home extends StatelessWidget {
               SizedBox(height: 30),
               Padding(
                 padding: EdgeInsets.only(left: 5),
-                child: Text('Featured Articles', style: GoogleFonts.poppins(fontSize: 17, fontWeight: FontWeight.w600)),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text('Featured Articles', style: GoogleFonts.poppins(fontSize: 17, fontWeight: FontWeight.w600)),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => Articles()));
+                      },
+                      child: Text('See More Articles', style: GoogleFonts.poppins(color: Colors.black, fontSize: 12, fontWeight: FontWeight.w500, decoration: TextDecoration.underline))
+                    )
+                  ]
+                )
               ),
               SizedBox(height: 15),
               SingleChildScrollView(
