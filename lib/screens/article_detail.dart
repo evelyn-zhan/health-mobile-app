@@ -24,8 +24,8 @@ class ArticleDetail extends StatelessWidget {
             children: [
               Container(
                 width: double.infinity,
-                padding: EdgeInsets.fromLTRB(15, 70, 15, 30),
-                color: Color(0xFF3A3939),
+                padding: EdgeInsets.fromLTRB(10, 70, 10, 40),
+                color: Color(0xFF1E1E1E),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -33,7 +33,7 @@ class ArticleDetail extends StatelessWidget {
                       onPressed: () => Navigator.pop(context),
                       style: TextButton.styleFrom(overlayColor: Colors.transparent),
                       icon: Icon(Icons.arrow_back_ios_new_rounded, color: Colors.white, size: 20),
-                      label: Text('Back', style: GoogleFonts.poppins(color: Colors.white, fontSize: 15, fontWeight: FontWeight.w500, decoration: TextDecoration.underline, decorationColor: Colors.white))
+                      label: Text('Back', style: GoogleFonts.poppins(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w500, decoration: TextDecoration.underline, decorationColor: Colors.white))
                     ),
                     SizedBox(height: 15),
                     Padding(
@@ -42,7 +42,7 @@ class ArticleDetail extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(title, maxLines: 2, style: GoogleFonts.poppins(color: Colors.white, fontSize: 16, fontWeight: FontWeight.w700)),
-                          SizedBox(height: 5),
+                          SizedBox(height: 10),
                           Text(dateCreated, style: GoogleFonts.poppins(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w500)),
                           SizedBox(height: 25),
                           ClipRRect(
@@ -55,29 +55,15 @@ class ArticleDetail extends StatelessWidget {
                   ]
                 )
               ),
-              ListView.builder(
-                padding: EdgeInsets.zero,
-                shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                itemCount: detail.length,
-                itemBuilder: (context, index) {
-                  return Container(
-                    padding: EdgeInsets.all(25),
-                    color: index % 2 == 0 ? Colors.white : Color(0xFF3A3939),
-                    child: Text(
-                      detail[index],
-                      textAlign: TextAlign.justify,
-                      style: GoogleFonts.poppins(
-                        color: index % 2 == 0 ? Colors.black : Colors.white,
-                        fontSize: 13,
-                        fontWeight: FontWeight.w400
-                      )
-                    )
-                  );
-                }
-              )
+              ...detail.map((paragraph) {
+                return
+                Container(
+                  padding: EdgeInsets.fromLTRB(20, 30, 20, 0),
+                  child: Text(paragraph, textAlign: TextAlign.justify, style: GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.w400))
+                );
+              })
             ]
-          )
+          ),
         )
       )
     );
