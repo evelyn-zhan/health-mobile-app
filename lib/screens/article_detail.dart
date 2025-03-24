@@ -64,6 +64,7 @@ class ArticleDetail extends StatelessWidget {
                     color: index % 2 == 0 ? Colors.white : Color(0xFF3A3939),
                     child: Text(
                       detail[index],
+                      textAlign: TextAlign.justify,
                       style: GoogleFonts.poppins(
                         color: index % 2 == 0 ? Colors.black : Colors.white,
                         fontSize: 13,
