@@ -2,7 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ArticleCard extends StatelessWidget {
-  const ArticleCard({super.key, required this.title, required this.imageUrl, required this.description, required this.dateCreated, required this.detail});
+  const ArticleCard({
+    super.key,
+    required this.title,
+    required this.imageUrl,
+    required this.description,
+    required this.dateCreated,
+    required this.detail
+  });
 
   final String title, imageUrl, description, dateCreated;
   final List detail;
