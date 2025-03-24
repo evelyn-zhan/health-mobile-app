@@ -32,8 +32,8 @@ class ArticleDetail extends StatelessWidget {
                     TextButton.icon(
                       onPressed: () => Navigator.pop(context),
                       style: TextButton.styleFrom(overlayColor: Colors.transparent),
-                      icon: Icon(Icons.arrow_back_ios_new_rounded, color: Colors.white, size: 16),
-                      label: Text('Back', style: GoogleFonts.poppins(color: Colors.white, fontSize: 13, fontWeight: FontWeight.w500, decoration: TextDecoration.underline, decorationColor: Colors.white))
+                      icon: Icon(Icons.arrow_back_ios_new_rounded, color: Colors.white, size: 20),
+                      label: Text('Back', style: GoogleFonts.poppins(color: Colors.white, fontSize: 15, fontWeight: FontWeight.w500, decoration: TextDecoration.underline, decorationColor: Colors.white))
                     ),
                     SizedBox(height: 15),
                     Padding(
@@ -48,7 +48,7 @@ class ArticleDetail extends StatelessWidget {
                           ClipRRect(
                             borderRadius: BorderRadius.circular(10),
                             child: Image.asset(imageUrl, width: double.infinity, height: 160, fit: BoxFit.cover),
-                          ),
+                          )
                         ]
                       )
                     )
@@ -56,7 +56,9 @@ class ArticleDetail extends StatelessWidget {
                 )
               ),
               ListView.builder(
+                padding: EdgeInsets.zero,
                 shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
                 itemCount: detail.length,
                 itemBuilder: (context, index) {
                   return Container(
@@ -75,7 +77,7 @@ class ArticleDetail extends StatelessWidget {
                 }
               )
             ]
-          ),
+          )
         )
       )
     );
