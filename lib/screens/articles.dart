@@ -34,7 +34,7 @@ class _ArticlesState extends State<Articles> {
       backgroundColor: Color(0xFFFAFAFA),
       body: Container(
         height: MediaQuery.of(context).size.height * 0.95,
-        padding: EdgeInsets.fromLTRB(15, 70, 15, 40),
+        padding: EdgeInsets.fromLTRB(10, 70, 10, 40),
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Column(
@@ -43,7 +43,7 @@ class _ArticlesState extends State<Articles> {
               IconButton(
                 onPressed: () => Navigator.pop(context),
                 style: IconButton.styleFrom(overlayColor: Colors.transparent),
-                icon: Icon(Icons.arrow_back_ios_new_rounded, color: Colors.black, size: 21)
+                icon: Icon(Icons.arrow_back_ios_new_rounded, color: Colors.black, size: 20)
               ),
               SizedBox(height: 15),
               Padding(
@@ -54,11 +54,11 @@ class _ArticlesState extends State<Articles> {
                     Text("Don't miss the latest articles!", style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.w700)),
                     Text('Learn more, gain knowledge', style: GoogleFonts.poppins(color: Color(0xFF898989), fontSize: 15, fontWeight: FontWeight.w600)),
                   ]
-                )
+                ),
               ),
               SizedBox(height: 30),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 5),
+                padding: EdgeInsets.symmetric(horizontal: 10),
                 child: Column(
                   children: [
                     ...articleList.map((article) {
