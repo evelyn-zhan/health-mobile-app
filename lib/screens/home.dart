@@ -15,7 +15,7 @@ class Home extends StatelessWidget {
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Padding(
-          padding: EdgeInsets.fromLTRB(20, 75, 20, 40),
+          padding: EdgeInsets.fromLTRB(25, 70, 25, 40),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -23,19 +23,16 @@ class Home extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Padding(
-                    padding: EdgeInsets.only(left: 5),
-                    child: Column(
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text('Good day, Cinnamon 👋', style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.w700)),
-                            Text('How are you today?', style: GoogleFonts.poppins(fontSize: 15, fontWeight: FontWeight.w600, color: Color(0xFF898989)))
-                          ]
-                        )
-                      ]
-                    ),
+                  Column(
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('Good day, Cinnamon 👋', style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.w700)),
+                          Text('How are you today?', style: GoogleFonts.poppins(fontSize: 15, fontWeight: FontWeight.w600, color: Color(0xFF898989)))
+                        ]
+                      )
+                    ]
                   ),
                   Container(
                     width: 50, height: 50,
@@ -47,10 +44,7 @@ class Home extends StatelessWidget {
                 ]
               ),
               SizedBox(height: 30),
-              Padding(
-                padding: EdgeInsets.only(left: 5),
-                child: Text("Today's Health Summary", style: GoogleFonts.poppins(fontSize: 17, fontWeight: FontWeight.w600)),
-              ),
+              Text("Today's Health Summary", style: GoogleFonts.poppins(fontSize: 17, fontWeight: FontWeight.w600)),
               SizedBox(height: 10),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -131,10 +125,7 @@ class Home extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 30),
-              Padding(
-                padding: EdgeInsets.only(left: 5),
-                child: Text('Daily Mission', style: GoogleFonts.poppins(fontSize: 17, fontWeight: FontWeight.w600)),
-              ),
+              Text('Daily Mission', style: GoogleFonts.poppins(fontSize: 17, fontWeight: FontWeight.w600)),
               SizedBox(height: 10),
               Container(
                 width: double.infinity, height: 80,
@@ -190,21 +181,18 @@ class Home extends StatelessWidget {
                 )
               ),
               SizedBox(height: 30),
-              Padding(
-                padding: EdgeInsets.only(left: 5),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text('Featured Articles', style: GoogleFonts.poppins(fontSize: 17, fontWeight: FontWeight.w600)),
-                    TextButton(
-                      onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => Articles()));
-                      },
-                      style: TextButton.styleFrom(overlayColor: Colors.transparent),
-                      child: Text('See More Articles', style: GoogleFonts.poppins(color: Colors.black, fontSize: 13, fontWeight: FontWeight.w500, decoration: TextDecoration.underline))
-                    )
-                  ]
-                )
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text('Featured Articles', style: GoogleFonts.poppins(fontSize: 17, fontWeight: FontWeight.w600)),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => Articles()));
+                    },
+                    style: TextButton.styleFrom(overlayColor: Colors.transparent),
+                    child: Text('See More Articles', style: GoogleFonts.poppins(color: Colors.black, fontSize: 13, fontWeight: FontWeight.w500, decoration: TextDecoration.underline))
+                  )
+                ]
               ),
               SizedBox(height: 10),
               SingleChildScrollView(
