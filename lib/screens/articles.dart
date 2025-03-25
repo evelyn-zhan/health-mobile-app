@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:health_mobile_app/components/article_card.dart';
+import 'package:health_mobile_app/components/navbar.dart';
 
 class Articles extends StatefulWidget {
   const Articles({super.key});
@@ -33,50 +34,58 @@ class _ArticlesState extends State<Articles> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFFFAFAFA),
-      body: Container(
-        height: MediaQuery.of(context).size.height * 0.95,
-        padding: EdgeInsets.fromLTRB(10, 70, 10, 40),
-        child: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              IconButton(
-                onPressed: () => Navigator.pop(context),
-                style: IconButton.styleFrom(overlayColor: Colors.transparent),
-                icon: Icon(Icons.arrow_back_ios_new_rounded, color: Colors.black, size: 20)
+      body: SafeArea(
+        child: Column(
+          children: [
+            Expanded(
+              child: SingleChildScrollView(
+                scrollDirection: Axis.vertical,
+                child: Padding(
+                  padding: EdgeInsets.fromLTRB(10, 30, 10, 45),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      IconButton(
+                        onPressed: () => Navigator.pop(context),
+                        style: IconButton.styleFrom(overlayColor: Colors.transparent),
+                        icon: Icon(Icons.arrow_back_ios_new_rounded, color: Colors.black, size: 20)
+                      ),
+                      SizedBox(height: 15),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 10),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text("Don't miss the latest articles!", style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.w700)),
+                            Text('Learn more, gain knowledge', style: GoogleFonts.poppins(color: Color(0xFF898989), fontSize: 15, fontWeight: FontWeight.w600)),
+                          ]
+                        ),
+                      ),
+                      SizedBox(height: 30),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 10),
+                        child: Column(
+                          children: [
+                            ...articleList.map((article) {
+                              return ArticleCard(
+                                title: article['title'],
+                                author: article['author'],
+                                dateCreated: article['dateCreated'],
+                                imageUrl: article['imageUrl'],
+                                description: article['description'],
+                                detail: article['detail']
+                              );
+                            })
+                          ]
+                        ),
+                      )
+                    ]
+                  ),
+                )
               ),
-              SizedBox(height: 15),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text("Don't miss the latest articles!", style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.w700)),
-                    Text('Learn more, gain knowledge', style: GoogleFonts.poppins(color: Color(0xFF898989), fontSize: 15, fontWeight: FontWeight.w600)),
-                  ]
-                ),
-              ),
-              SizedBox(height: 30),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10),
-                child: Column(
-                  children: [
-                    ...articleList.map((article) {
-                      return ArticleCard(
-                        title: article['title'],
-                        author: article['author'],
-                        dateCreated: article['dateCreated'],
-                        imageUrl: article['imageUrl'],
-                        description: article['description'],
-                        detail: article['detail']
-                      );
-                    })
-                  ]
-                ),
-              )
-            ]
-          )
+            ),
+            Navbar(page: 'articles')
+          ]
         ),
       )
     );
