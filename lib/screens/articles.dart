@@ -5,8 +5,8 @@ import 'package:flutter/services.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 
-import 'package:health_mobile_app/components/article_card.dart';
 import 'package:health_mobile_app/components/navbar.dart';
+import 'package:health_mobile_app/components/article_card.dart';
 
 class Articles extends StatefulWidget {
   const Articles({super.key});
