@@ -8,20 +8,21 @@ class ArticleCard extends StatelessWidget {
   const ArticleCard({
     super.key,
     required this.title,
+    required this.author,
     required this.imageUrl,
     required this.description,
     required this.dateCreated,
     required this.detail
   });
 
-  final String title, imageUrl, description, dateCreated;
+  final String title, author, imageUrl, description, dateCreated;
   final List detail;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(context, MaterialPageRoute(builder: (context) => ArticleDetail(title: title, dateCreated: dateCreated, imageUrl: imageUrl, detail: detail)));
+        Navigator.push(context, MaterialPageRoute(builder: (context) => ArticleDetail(title: title, author: author, dateCreated: dateCreated, imageUrl: imageUrl, detail: detail)));
       },
       child: Container(
         padding: EdgeInsets.all(15),

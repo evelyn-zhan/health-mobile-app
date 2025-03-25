@@ -65,9 +65,10 @@ class _ArticlesState extends State<Articles> {
                     ...articleList.map((article) {
                       return ArticleCard(
                         title: article['title'],
+                        author: article['author'],
+                        dateCreated: article['dateCreated'],
                         imageUrl: article['imageUrl'],
                         description: article['description'],
-                        dateCreated: article['dateCreated'],
                         detail: article['detail']
                       );
                     })

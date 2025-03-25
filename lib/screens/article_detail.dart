@@ -5,12 +5,13 @@ class ArticleDetail extends StatefulWidget {
   const ArticleDetail({
     super.key,
     required this.title,
+    required this.author,
     required this.dateCreated,
     required this.imageUrl,
     required this.detail
   });
 
-  final String title, dateCreated, imageUrl;
+  final String title, author, dateCreated, imageUrl;
   final List detail;
 
   @override
@@ -49,8 +50,29 @@ class _ArticleDetailState extends State<ArticleDetail> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(widget.title, maxLines: 2, style: GoogleFonts.poppins(color: Colors.white, fontSize: 16, fontWeight: FontWeight.w700)),
-                        SizedBox(height: 10),
-                        Text(widget.dateCreated, style: GoogleFonts.poppins(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w500)),
+                        SizedBox(height: 15),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Icon(Icons.person_rounded, color: Colors.white, size: 20),
+                                SizedBox(width: 5),
+                                Text(widget.author, style: GoogleFonts.poppins(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w500))
+                              ]
+                            ),
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Icon(Icons.calendar_month_rounded, color: Colors.white, size: 20),
+                                SizedBox(width: 5),
+                                Text(widget.dateCreated, style: GoogleFonts.poppins(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w500))
+                              ]
+                            )
+                          ]
+                        ),
                         SizedBox(height: 25),
                         ClipRRect(
                           borderRadius: BorderRadius.circular(10),
