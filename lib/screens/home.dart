@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:google_fonts/google_fonts.dart';
-import 'package:health_mobile_app/components/navbar.dart';
 
+import 'package:health_mobile_app/components/navbar.dart';
 import 'package:health_mobile_app/screens/articles.dart';
 import 'package:health_mobile_app/components/featured_article_card.dart';
 
