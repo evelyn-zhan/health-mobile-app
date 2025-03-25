@@ -218,11 +218,11 @@ class Home extends StatelessWidget {
                       summary: 'Nutrient-packed foods to improve overall well-being'
                     )
                   ]
-                ),
+                )
               )
             ]
           )
-        ),
+        )
       )
     );
   }
