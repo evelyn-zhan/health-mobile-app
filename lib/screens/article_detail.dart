@@ -108,6 +108,9 @@ class _ArticleDetailState extends State<ArticleDetail> {
                           child: TextField(
                             controller: commentController,
                             decoration: InputDecoration(
+                              prefixIcon: Icon(Icons.message_outlined, color: Color(0xFF1E1E1E), size: 20),
+                              label: Text('Type your comment here...', style: GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.w400)),
+                              floatingLabelStyle: GoogleFonts.poppins(color: Color(0xFF1E1E1E), fontSize: 14, fontWeight: FontWeight.w400),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(color: Color(0xFF1E1E1E), width: 1),
                                 borderRadius: BorderRadius.circular(5)
@@ -115,11 +118,14 @@ class _ArticleDetailState extends State<ArticleDetail> {
                               focusedBorder: OutlineInputBorder(
                                 borderSide: BorderSide(color: Color(0xFF1E1E1E), width: 1),
                                 borderRadius: BorderRadius.circular(5)
-                              )
-                            )
-                          ),
-                        ),
+                              ),
+                              contentPadding: EdgeInsets.symmetric(vertical: 5)
+                            ),
+                            style: GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.w400)
+                          )
+                        )
                       ),
+                      SizedBox(width: 5),
                       IconButton(
                         onPressed: () {
                           setState(() {
