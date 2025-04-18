@@ -34,7 +34,10 @@ class _ToDoState extends State<ToDo> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         IconButton(
-                          onPressed: () => Navigator.pop(context),
+                          onPressed: () {
+                            context.read<TodoProvider>().changeActive("todo");
+                            Navigator.pop(context);
+                          },
                           style: IconButton.styleFrom(overlayColor: Colors.transparent),
                           icon: Icon(Icons.arrow_back_ios_new_rounded, color: Colors.black, size: 20)
                         ),
