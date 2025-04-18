@@ -61,50 +61,6 @@ class Navbar extends StatelessWidget {
               ),
             );
           })
-
-          // GestureDetector(
-          //   onTap: () {
-          //     Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
-          //   },
-          //   child: Column(
-          //     children: [
-          //       Icon(Icons.home_rounded, color: page == 'home' ? Colors.white : Color(0xFFC8C8C8), size: 30),
-          //       SizedBox(height: 3),
-          //       Text('Home', style: GoogleFonts.poppins(color: page == 'home' ? Colors.white : Color(0xFFC8C8C8), fontSize: 13, fontWeight: FontWeight.w600))
-          //     ]
-          //   ),
-          // ),
-          // GestureDetector(
-          //   onTap: () {
-          //     Navigator.push(context, MaterialPageRoute(builder: (context) => Articles()));
-          //   },
-          //   child: Column(
-          //     children: [
-          //       Icon(Icons.article_rounded, color: page == 'articles' ? Colors.white : Color(0xFFC8C8C8), size: 30),
-          //       SizedBox(height: 3),
-          //       Text('Articles', style: GoogleFonts.poppins(color: page == 'articles' ? Colors.white : Color(0xFFC8C8C8), fontSize: 13, fontWeight: FontWeight.w600))
-          //     ]
-          //   ),
-          // ),
-          // GestureDetector(
-          //   onTap: () {
-          //     Navigator.push(context, MaterialPageRoute(builder: (context) => ToDo()));
-          //   },
-          //   child: Column(
-          //     children: [
-          //       Icon(Icons.task_outlined, color: page == 'tasks' ? Colors.white : Color(0xFFC8C8C8), size: 30),
-          //       SizedBox(height: 3),
-          //       Text('Tasks', style: GoogleFonts.poppins(color: page == 'tasks' ? Colors.white : Color(0xFFC8C8C8), fontSize: 13, fontWeight: FontWeight.w600))
-          //     ]
-          //   )
-          // ),
-          // Column(
-          //   children: [
-          //     Icon(Icons.person_2_rounded, color: page == 'profile' ? Colors.white : Color(0xFFC8C8C8), size: 30),
-          //     SizedBox(height: 3),
-          //     Text('Profile', style: GoogleFonts.poppins(color: page == 'profile' ? Colors.white : Color(0xFFC8C8C8), fontSize: 13, fontWeight: FontWeight.w600))
-          //   ]
-          // )
         ]
       )
     );
