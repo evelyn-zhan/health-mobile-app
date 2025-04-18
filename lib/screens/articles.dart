@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-
 import 'dart:convert';
 import 'package:flutter/services.dart';
-
 import 'package:google_fonts/google_fonts.dart';
-
 import 'package:health_mobile_app/components/navbar.dart';
 import 'package:health_mobile_app/components/article_card.dart';
 
@@ -84,7 +81,7 @@ class _ArticlesState extends State<Articles> {
                 )
               ),
             ),
-            Navbar(page: 'articles')
+            Navbar(page: 'Articles')
           ]
         ),
       )
