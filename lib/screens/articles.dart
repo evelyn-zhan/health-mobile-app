@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-
 import 'dart:convert';
 import 'package:flutter/services.dart';
-
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:health_mobile_app/components/filter_article_chip.dart';
 import 'package:health_mobile_app/components/navbar.dart';
 import 'package:health_mobile_app/components/article_card.dart';
 
@@ -28,6 +26,35 @@ class _ArticlesState extends State<Articles> {
   void initState() {
     super.initState();
     getArticles();
+  }
+
+  List<Map<String, dynamic>> articleCategory = [
+    {
+      "category": "Lifestyle",
+      "selected": false
+    },
+    {
+      "category": "Healthy Food",
+      "selected": false
+    },
+    {
+      "category": "Fitness",
+      "selected": false
+    }
+  ];
+
+  List<String> selectedCategory = [];
+
+  void selectCategory(Map<String, dynamic> category, bool value) {
+    setState(() {
+      category["selected"] = value;
+      if (value) {
+        selectedCategory.add(category["category"]);
+      } else {
+        selectedCategory.remove(category["category"]);
+      }
+      print(selectedCategory);
+    });
   }
 
   @override
@@ -61,12 +88,25 @@ class _ArticlesState extends State<Articles> {
                           ]
                         ),
                       ),
-                      SizedBox(height: 30),
+                      SizedBox(height: 20),
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 10),
                         child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            ...articleList.map((article) {
+                            Text("Filter by tags", style: GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.w500)),
+                            SizedBox(height: 4),
+                            Row(
+                              children: [
+                                ...articleCategory.map((category) {
+                                  return FilterArticleChip(category: category, onSelectedHandler: selectCategory);
+                                })
+                              ]
+                            ),
+                            SizedBox(height: 20),
+                            ...articleList
+                            .where((article) => selectedCategory.contains(article["category"]) || selectedCategory.isEmpty)
+                            .map((article) {
                               return ArticleCard(
                                 title: article['title'],
                                 author: article['author'],
@@ -84,7 +124,7 @@ class _ArticlesState extends State<Articles> {
                 )
               ),
             ),
-            Navbar(page: 'articles')
+            Navbar(page: 'Articles')
           ]
         ),
       )
