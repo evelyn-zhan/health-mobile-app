@@ -27,7 +27,7 @@ class _ToDoState extends State<ToDo> {
               child: SingleChildScrollView(
                 scrollDirection: Axis.vertical,
                 child: Padding(
-                  padding: EdgeInsets.fromLTRB(10, 30, 10, 45),
+                  padding: EdgeInsets.fromLTRB(10, 20, 10, 45),
                   child: SizedBox(
                     width: double.infinity,
                     child: Column(
