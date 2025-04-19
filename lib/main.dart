@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:health_mobile_app/providers/profile_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:health_mobile_app/providers/todo_provider.dart';
 import 'package:health_mobile_app/screens/home.dart';
@@ -9,6 +10,9 @@ void main() {
       providers: [
         ChangeNotifierProvider(
           create: (context) => TodoProvider()
+        ),
+        ChangeNotifierProvider(
+          create: (context) => ProfileProvider()
         )
       ],
       child: MyApp()

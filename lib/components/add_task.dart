@@ -44,30 +44,32 @@ class _AddTaskState extends State<AddTask> {
           style: GoogleFonts.poppins(fontSize: 15, fontWeight: FontWeight.w600)
         ),
         SizedBox(height: 12),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            ...categories.map((category) {
-              return Row(
-                children: [
-                  Radio(
-                    value: category,
-                    groupValue: taskCategory,
-                    activeColor: Color(0xFF0369A1),
-                    onChanged: (value) {
-                      setState(() {
-                        taskCategory = value;
-                      });
-                    }
-                  ),
-                  SizedBox(width: 3),
-                  Text(category, style: GoogleFonts.poppins(fontSize: 13, fontWeight: FontWeight.w500))
-                ]
-              );
-            })
-          ]
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              ...categories.map((category) {
+                return Row(
+                  children: [
+                    Radio(
+                      value: category,
+                      groupValue: taskCategory,
+                      activeColor: Color(0xFF0369A1),
+                      onChanged: (value) {
+                        setState(() {
+                          taskCategory = value;
+                        });
+                      }
+                    ),
+                    Text(category, style: GoogleFonts.poppins(fontSize: 13, fontWeight: FontWeight.w500))
+                  ]
+                );
+              })
+            ]
+          ),
         ),
-        SizedBox(height: 16),
+        SizedBox(height: 12),
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
