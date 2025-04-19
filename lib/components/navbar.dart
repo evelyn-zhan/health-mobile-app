@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:health_mobile_app/screens/home.dart';
 import 'package:health_mobile_app/screens/articles.dart';
+import 'package:health_mobile_app/screens/profile.dart';
 import 'package:health_mobile_app/screens/todo.dart';
 
 class Navbar extends StatelessWidget {
@@ -25,7 +26,7 @@ class Navbar extends StatelessWidget {
       "text": "Tasks",
     },
     {
-      "widget": (),
+      "widget": Profile(),
       "icon": Icons.person_2_rounded,
       "text": "Profile",
     },
