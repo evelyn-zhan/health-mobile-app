@@ -104,5 +104,6 @@ class ProfileProvider with ChangeNotifier {
     passwordErrorMessage = "";
     newPasswordErrorMessage = "";
     confirmPasswordErrorMessage = "";
+    notifyListeners();
   }
 }

@@ -19,6 +19,7 @@ class ChangePassword extends StatelessWidget {
             children: [
               IconButton(
                 onPressed: () {
+                  context.read<ProfileProvider>().clearController();
                   context.read<ProfileProvider>().resetErrorMessage();
                   Navigator.pop(context);
                 },
