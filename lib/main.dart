@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:health_mobile_app/providers/page_provider.dart';
 import 'package:health_mobile_app/providers/profile_provider.dart';
+import 'package:health_mobile_app/screens/new_task.dart';
 import 'package:provider/provider.dart';
 import 'package:health_mobile_app/providers/todo_provider.dart';
 
@@ -39,8 +40,22 @@ class _MyAppState extends State<MyApp> {
       home: Scaffold(
         backgroundColor: Color(0xFFFAFAFA),
         body: SafeArea(
-          child: context.read<PageProvider>().page[context.watch<PageProvider>().pageIndex]
+          child: context.read<PageProvider>().page[context.watch<PageProvider>().pageIndex],
         ),
+        floatingActionButton:
+        context.watch<PageProvider>().pageIndex == 2
+        ? Builder(
+          builder: (context) {
+            return FloatingActionButton(
+              onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => AddTask())),
+              backgroundColor: Color(0xFF1E1E1E),
+              foregroundColor: Colors.white,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+              child: Icon(Icons.add_rounded, size: 30)
+            );
+          }
+        )
+        : null,
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           iconSize: 30,
