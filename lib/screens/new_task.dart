@@ -30,7 +30,7 @@ class _AddTaskState extends State<AddTask> {
         centerTitle: true
       ),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 25, vertical: 20),
+        padding: EdgeInsets.symmetric(horizontal: 25, vertical: 30),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
