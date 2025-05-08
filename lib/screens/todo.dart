@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:health_mobile_app/providers/page_provider.dart';
-import 'package:health_mobile_app/screens/new_task.dart';
 import 'package:provider/provider.dart';
 import 'package:health_mobile_app/providers/todo_provider.dart';
 import 'package:health_mobile_app/components/todo_card.dart';
@@ -132,17 +131,6 @@ class ToDo extends StatelessWidget {
               )
             )
           )
-        ),
-        Container(
-          margin: EdgeInsets.only(right: 25, bottom: 15),
-          alignment: Alignment.bottomRight,
-          child: FloatingActionButton(
-            onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => AddTask())),
-            backgroundColor: Color(0xFF1E1E1E),
-            foregroundColor: Colors.white,
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-            child: Icon(Icons.add_rounded, size: 30)
-          ),
         )
       ]
     );
