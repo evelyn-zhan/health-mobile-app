@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:health_mobile_app/providers/page_provider.dart';
 import 'package:health_mobile_app/providers/profile_provider.dart';
 import 'package:health_mobile_app/screens/change_password.dart';
 import 'package:health_mobile_app/screens/change_username.dart';
