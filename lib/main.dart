@@ -37,21 +37,60 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: context.watch<ProfileProvider>().isDark
+      ? ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: Colors.black,
+        canvasColor: Color(0xFF1E1E1E),
+        shadowColor: Colors.black,
+        iconTheme: IconThemeData(color: Colors.white),
+        inputDecorationTheme: InputDecorationTheme(
+          enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.grey, width: 1),
+            borderRadius: BorderRadius.circular(5)
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.grey, width: 1),
+            borderRadius: BorderRadius.circular(5)
+          )
+        ),
+        floatingActionButtonTheme: FloatingActionButtonThemeData(
+          backgroundColor: Colors.white,
+          foregroundColor: Colors.black
+        )
+      )
+      : ThemeData.light().copyWith(
+        scaffoldBackgroundColor: Color(0xFFFAFAFA),
+        canvasColor: Colors.white,
+        shadowColor: Color(0xFFD9D9D9),
+        iconTheme: IconThemeData(color: Colors.black),
+        inputDecorationTheme: InputDecorationTheme(
+          enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF1E1E1E), width: 1),
+            borderRadius: BorderRadius.circular(5)
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF1E1E1E), width: 1),
+            borderRadius: BorderRadius.circular(5)
+          )
+        ),
+        floatingActionButtonTheme: FloatingActionButtonThemeData(
+          backgroundColor: Color(0xFF1E1E1E),
+          foregroundColor: Colors.white
+        )
+      ),
       home: Scaffold(
-        backgroundColor: Color(0xFFFAFAFA),
-        appBar:
-        context.watch<PageProvider>().pageName == ""
+        appBar: context.watch<PageProvider>().pageName == ""
         ? null
         : AppBar(
             backgroundColor: Color(0xFF1E1E1E),
-            leading: GestureDetector(
-              onTap: () {
+            leading: IconButton(
+              onPressed: () {
                 if (context.read<PageProvider>().pageIndex == 2) {
                   context.read<TodoProvider>().changeActive("todo");
                 }
                 context.read<PageProvider>().changePage(0);
               },
-              child: Icon(Icons.arrow_back_ios_new_rounded, color: Colors.white, size: 20)
+              icon: Icon(Icons.arrow_back_ios_new_rounded, color: Colors.white, size: 20)
             ),
             title: Text(context.watch<PageProvider>().pageName, style: GoogleFonts.poppins(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w600)),
             centerTitle: true

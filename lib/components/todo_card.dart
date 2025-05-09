@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:health_mobile_app/providers/profile_provider.dart';
 import 'package:health_mobile_app/providers/todo_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -17,8 +18,8 @@ class ToDoCard extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
       margin: EdgeInsets.only(bottom: 8),
       decoration: BoxDecoration(
-        color: Colors.white,
-        border: Border.all(color: Color(0xFFC8C8C8), width: 1.5),
+        color: Theme.of(context).canvasColor,
+        border: Border.all(color: Theme.of(context).shadowColor, width: 1.5),
         borderRadius: BorderRadius.circular(10)
       ),
       child: Row(
@@ -44,7 +45,7 @@ class ToDoCard extends StatelessWidget {
               ),
               IconButton(
                 onPressed: () => context.read<TodoProvider>().removeTask(task),
-                icon: Icon(Icons.delete_rounded, color: Colors.black, size: 28)
+                icon: Icon(Icons.delete_rounded, color: context.watch<ProfileProvider>().isDark ? Colors.white : Colors.black, size: 28)
               )
             ]
           )

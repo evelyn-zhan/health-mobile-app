@@ -19,12 +19,14 @@ class _AddTaskState extends State<AddTask> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFAFAFA),
       appBar: AppBar(
         backgroundColor: Color(0xFF1E1E1E),
-        leading: GestureDetector(
-          onTap: () => Navigator.pop(context),
-          child: Icon(Icons.arrow_back_ios_new_rounded, color: Colors.white, size: 20)
+        leading: IconButton(
+          onPressed: () {
+            taskTitleC.clear();
+            Navigator.pop(context);
+          },
+          icon: Icon(Icons.arrow_back_ios_new_rounded, color: Colors.white, size: 20)
         ),
         title: Text("New Task", style: GoogleFonts.poppins(color: Colors.white, fontSize: 18, fontWeight: FontWeight.w600)),
         centerTitle: true
@@ -42,8 +44,8 @@ class _AddTaskState extends State<AddTask> {
                 hintStyle: GoogleFonts.poppins(color: Color(0xFF898989), fontSize: 15, fontWeight: FontWeight.w600),
                 floatingLabelBehavior: FloatingLabelBehavior.never,
                 filled: true,
-                fillColor: Colors.white,
-                hoverColor: Colors.white,
+                fillColor: Colors.transparent,
+                hoverColor: Colors.transparent,
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(color: Color(0xFFC8C8C8), width: 1.5),
                   borderRadius: BorderRadius.circular(10)
