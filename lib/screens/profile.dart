@@ -20,7 +20,7 @@ class _ProfileState extends State<Profile> {
           Expanded(
             child: Container(
               width: double.infinity,
-              color: Color(0xFF1E1E1E),
+              color: Colors.black,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -28,7 +28,7 @@ class _ProfileState extends State<Profile> {
                   Expanded(
                     child: Container(
                       decoration: BoxDecoration(
-                        color: Color(0xFFFAFAFA),
+                        color: Theme.of(context).canvasColor,
                         borderRadius: BorderRadius.only(topLeft: Radius.circular(15), topRight: Radius.circular(15)),
                       ),
                       child: SingleChildScrollView(
@@ -49,10 +49,10 @@ class _ProfileState extends State<Profile> {
                               SizedBox(height: 16),
                               ExpansionTile(
                                 shape: Border(),
-                                backgroundColor: Color(0xFFFAFAFA),
+                                backgroundColor: Theme.of(context).canvasColor,
                                 title: Row(
                                   children: [
-                                    Icon(Icons.account_circle_outlined, color: Colors.black),
+                                    Icon(Icons.account_circle_outlined, color: Theme.of(context).iconTheme.color),
                                     SizedBox(width: 8),
                                     Text("Account Information", style: GoogleFonts.poppins(fontSize: 15, fontWeight: FontWeight.w600))
                                   ]
@@ -91,14 +91,23 @@ class _ProfileState extends State<Profile> {
                                       },
                                       child: Text("Change password", style: GoogleFonts.poppins(fontSize: 12))
                                     )
-                                  ),
+                                  )
                                 ]
+                              ),
+                              ListTile(
+                                leading: Icon(Icons.dark_mode_rounded, size: 20),
+                                title: Text("Dark Mode", style: GoogleFonts.poppins(fontSize: 15, fontWeight: FontWeight.w600)),
+                                trailing: Switch(
+                                  activeColor: Color(0xFF0369A1),
+                                  value: context.watch<ProfileProvider>().isDark,
+                                  onChanged: (bool value) => context.read<ProfileProvider>().switchMode(value),
+                                )
                               )
                             ]
-                          ),
-                        ),
-                      ),
-                    ),
+                          )
+                        )
+                      )
+                    )
                   )
                 ]
               )

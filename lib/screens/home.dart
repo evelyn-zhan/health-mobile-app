@@ -56,10 +56,10 @@ class Home extends StatelessWidget {
                             height: 100,
                             padding: EdgeInsets.all(15),
                             decoration: BoxDecoration(
-                              color: Colors.white,
+                              color: Theme.of(context).canvasColor,
                               borderRadius: BorderRadius.circular(10),
                               boxShadow: [
-                                BoxShadow(color: Color(0xFFD9D9D9), spreadRadius: 1, blurRadius: 3, offset: Offset(0, 5))
+                                BoxShadow(color: Theme.of(context).shadowColor, spreadRadius: 1, blurRadius: 3, offset: Offset(0, 5))
                               ]
                             ),
                             child: Row(
@@ -93,10 +93,10 @@ class Home extends StatelessWidget {
                             height: 100,
                             padding: EdgeInsets.all(15),
                             decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(10),
+                              color: Theme.of(context).canvasColor,
+                              borderRadius: BorderRadius.circular(10),
                               boxShadow: [
-                                BoxShadow(color: Color(0xFFD9D9D9), spreadRadius: 1, blurRadius: 5, offset: Offset(0, 5))
+                                BoxShadow(color: Theme.of(context).shadowColor, spreadRadius: 1, blurRadius: 5, offset: Offset(0, 5))
                               ]
                             ),
                             child: Row(
@@ -132,10 +132,10 @@ class Home extends StatelessWidget {
                       width: double.infinity, height: 80,
                       padding: EdgeInsets.all(15),
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Theme.of(context).canvasColor,
                         borderRadius: BorderRadius.circular(10),
                         boxShadow: [
-                          BoxShadow(color: Color(0xFFD9D9D9), spreadRadius: 1, blurRadius: 5, offset: Offset(0, 5))
+                          BoxShadow(color: Theme.of(context).shadowColor, spreadRadius: 1, blurRadius: 5, offset: Offset(0, 5))
                         ]
                       ),
                       child: Row(
@@ -159,10 +159,10 @@ class Home extends StatelessWidget {
                       width: double.infinity, height: 80,
                       padding: EdgeInsets.all(15),
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Theme.of(context).canvasColor,
                         borderRadius: BorderRadius.circular(10),
                         boxShadow: [
-                          BoxShadow(color: Color(0xFFD9D9D9), spreadRadius: 1, blurRadius: 5, offset: Offset(0, 5))
+                          BoxShadow(color: Theme.of(context).shadowColor, spreadRadius: 1, blurRadius: 5, offset: Offset(0, 5))
                         ]
                       ),
                       child: Row(
@@ -189,7 +189,7 @@ class Home extends StatelessWidget {
                         TextButton(
                           onPressed: () => context.read<PageProvider>().changePage(1),
                           style: TextButton.styleFrom(overlayColor: Colors.transparent),
-                          child: Text('See More Articles', style: GoogleFonts.poppins(color: Colors.black, fontSize: 13, fontWeight: FontWeight.w500, decoration: TextDecoration.underline))
+                          child: Text('See More Articles', style: GoogleFonts.poppins(color: context.watch<ProfileProvider>().isDark? Colors.white : Colors.black, fontSize: 13, fontWeight: FontWeight.w500, decoration: TextDecoration.underline))
                         )
                       ]
                     ),
