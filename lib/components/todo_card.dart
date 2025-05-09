@@ -32,12 +32,21 @@ class ToDoCard extends StatelessWidget {
               Text(task["category"], style: GoogleFonts.poppins(color: task["color"], fontSize: 13, fontWeight: FontWeight.w600))
             ]
           ),
-          Checkbox(
-            value: task["done"],
-            activeColor: Color(0xFF212121),
-            onChanged: (value) {
-              context.read<TodoProvider>().checkTask(task);
-            }
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Checkbox(
+                value: task["done"],
+                activeColor: Color(0xFF212121),
+                onChanged: (value) {
+                  context.read<TodoProvider>().checkTask(task);
+                }
+              ),
+              IconButton(
+                onPressed: () => context.read<TodoProvider>().removeTask(task),
+                icon: Icon(Icons.delete_rounded, color: Colors.black, size: 28)
+              )
+            ]
           )
         ]
       )

@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:health_mobile_app/providers/page_provider.dart';
 import 'package:health_mobile_app/providers/profile_provider.dart';
+import 'package:health_mobile_app/screens/new_task.dart';
 import 'package:provider/provider.dart';
 import 'package:health_mobile_app/providers/todo_provider.dart';
-import 'package:health_mobile_app/screens/home.dart';
 
 void main() {
   runApp(
     MultiProvider(
       providers: [
+        ChangeNotifierProvider(
+          create: (context) => PageProvider(),
+        ),
         ChangeNotifierProvider(
           create: (context) => TodoProvider()
         ),
@@ -20,14 +25,72 @@ void main() {
   );
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Home()
+      home: Scaffold(
+        backgroundColor: Color(0xFFFAFAFA),
+        appBar:
+        context.watch<PageProvider>().pageName == ""
+        ? null
+        : AppBar(
+            backgroundColor: Color(0xFF1E1E1E),
+            leading: GestureDetector(
+              onTap: () {
+                if (context.read<PageProvider>().pageIndex == 2) {
+                  context.read<TodoProvider>().changeActive("todo");
+                }
+                context.read<PageProvider>().changePage(0);
+              },
+              child: Icon(Icons.arrow_back_ios_new_rounded, color: Colors.white, size: 20)
+            ),
+            title: Text(context.watch<PageProvider>().pageName, style: GoogleFonts.poppins(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w600)),
+            centerTitle: true
+          ),
+        body: SafeArea(
+          child: context.read<PageProvider>().page[context.watch<PageProvider>().pageIndex],
+        ),
+        floatingActionButton:
+        context.watch<PageProvider>().pageIndex == 2
+        ? Builder(
+          builder: (context) {
+            return FloatingActionButton(
+              onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => AddTask())),
+              backgroundColor: Color(0xFF1E1E1E),
+              foregroundColor: Colors.white,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+              child: Icon(Icons.add_rounded, size: 30)
+            );
+          }
+        )
+        : null,
+        bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          iconSize: 30,
+          backgroundColor: Color(0xFF1E1E1E),
+          unselectedItemColor: Color(0xFFC8C8C8),
+          selectedItemColor: Colors.white,
+          unselectedLabelStyle: GoogleFonts.poppins(fontSize: 13, fontWeight: FontWeight.w600),
+          selectedLabelStyle: GoogleFonts.poppins(fontSize: 13, fontWeight: FontWeight.w600),
+          currentIndex: context.watch<PageProvider>().pageIndex,
+          onTap: (int index) => context.read<PageProvider>().changePage(index),
+          items: [
+            BottomNavigationBarItem(icon: Icon(Icons.home_rounded), label: "Home"),
+            BottomNavigationBarItem(icon: Icon(Icons.article_rounded), label: "Articles"),
+            BottomNavigationBarItem(icon: Icon(Icons.task_outlined), label: "Tasks"),
+            BottomNavigationBarItem(icon: Icon(Icons.person_2_rounded), label: "Profile"),
+          ]
+        )
+      )
     );
   }
 }
