@@ -15,7 +15,7 @@ class ProfileProvider with ChangeNotifier {
   TextEditingController newPasswordC = TextEditingController();
   TextEditingController confirmNewPasswordC = TextEditingController();
 
-  bool isDark = false;
+  bool isDark = false, isNotificationOn = false;
 
   void checkUsernameValidity() {
     List<String> invalidCharacter = ["!", "@", "#", "\$", "%", "^", "&", "*", "+", "=", "|", "\\", ":", ";", ","];
@@ -111,6 +111,11 @@ class ProfileProvider with ChangeNotifier {
 
   void switchMode(bool value) {
     isDark = value;
+    notifyListeners();
+  }
+
+  void switchNotification(bool value) {
+    isNotificationOn = value;
     notifyListeners();
   }
 }

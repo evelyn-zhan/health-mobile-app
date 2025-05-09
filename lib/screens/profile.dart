@@ -20,7 +20,7 @@ class _ProfileState extends State<Profile> {
           Expanded(
             child: Container(
               width: double.infinity,
-              color: Colors.black,
+              color: Color(0xFF1E1E1E),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -28,7 +28,7 @@ class _ProfileState extends State<Profile> {
                   Expanded(
                     child: Container(
                       decoration: BoxDecoration(
-                        color: Theme.of(context).canvasColor,
+                        color: Color(0xFFFAFAFA),
                         borderRadius: BorderRadius.only(topLeft: Radius.circular(15), topRight: Radius.circular(15)),
                       ),
                       child: SingleChildScrollView(
@@ -49,10 +49,10 @@ class _ProfileState extends State<Profile> {
                               SizedBox(height: 16),
                               ExpansionTile(
                                 shape: Border(),
-                                backgroundColor: Theme.of(context).canvasColor,
+                                backgroundColor: Color(0xFFFAFAFA),
                                 title: Row(
                                   children: [
-                                    Icon(Icons.account_circle_outlined, color: Theme.of(context).iconTheme.color),
+                                    Icon(Icons.account_circle_outlined, color: Colors.black),
                                     SizedBox(width: 8),
                                     Text("Account Information", style: GoogleFonts.poppins(fontSize: 15, fontWeight: FontWeight.w600))
                                   ]
@@ -101,6 +101,15 @@ class _ProfileState extends State<Profile> {
                                   activeColor: Color(0xFF0369A1),
                                   value: context.watch<ProfileProvider>().isDark,
                                   onChanged: (bool value) => context.read<ProfileProvider>().switchMode(value),
+                                )
+                              ),
+                              ListTile(
+                                leading: Icon(Icons.notifications_rounded, size: 20),
+                                title: Text("Enable Notification", style: GoogleFonts.poppins(fontSize: 15, fontWeight: FontWeight.w600)),
+                                trailing: Switch(
+                                  activeColor: Color(0xFF0369A1),
+                                  value: context.watch<ProfileProvider>().isNotificationOn,
+                                  onChanged: (bool value) => context.read<ProfileProvider>().switchNotification(value),
                                 )
                               )
                             ]
