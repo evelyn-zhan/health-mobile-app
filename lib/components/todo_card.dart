@@ -45,7 +45,7 @@ class ToDoCard extends StatelessWidget {
               ),
               IconButton(
                 onPressed: () => context.read<TodoProvider>().removeTask(task),
-                icon: Icon(Icons.delete_rounded, color: context.watch<ProfileProvider>().isDark ? Colors.white : Colors.black, size: 28)
+                icon: Icon(Icons.delete_rounded, color: Theme.of(context).iconTheme.color, size: 28)
               )
             ]
           )
