@@ -91,14 +91,32 @@ class _ProfileState extends State<Profile> {
                                       },
                                       child: Text("Change password", style: GoogleFonts.poppins(fontSize: 12))
                                     )
-                                  ),
+                                  )
                                 ]
+                              ),
+                              ListTile(
+                                leading: Icon(Icons.dark_mode_rounded, size: 20),
+                                title: Text("Dark Mode", style: GoogleFonts.poppins(fontSize: 15, fontWeight: FontWeight.w600)),
+                                trailing: Switch(
+                                  activeColor: Color(0xFF0369A1),
+                                  value: context.watch<ProfileProvider>().isDark,
+                                  onChanged: (bool value) => context.read<ProfileProvider>().switchMode(value),
+                                )
+                              ),
+                              ListTile(
+                                leading: Icon(Icons.notifications_rounded, size: 20),
+                                title: Text("Enable Notification", style: GoogleFonts.poppins(fontSize: 15, fontWeight: FontWeight.w600)),
+                                trailing: Switch(
+                                  activeColor: Color(0xFF0369A1),
+                                  value: context.watch<ProfileProvider>().isNotificationOn,
+                                  onChanged: (bool value) => context.read<ProfileProvider>().switchNotification(value),
+                                )
                               )
                             ]
-                          ),
-                        ),
-                      ),
-                    ),
+                          )
+                        )
+                      )
+                    )
                   )
                 ]
               )
