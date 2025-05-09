@@ -25,24 +25,6 @@ class _ProfileState extends State<Profile> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        IconButton(
-                          onPressed: () => context.read<PageProvider>().changePage(0),
-                          style: IconButton.styleFrom(overlayColor: Colors.transparent),
-                          icon: Icon(Icons.arrow_back_ios_new_rounded, color: Colors.white, size: 20)
-                        ),
-                        SizedBox(height: 15),
-                        Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 15),
-                          child: Text("My Profile", style: GoogleFonts.poppins(color: Colors.white, fontSize: 18, fontWeight: FontWeight.w700)),
-                        )
-                      ]
-                    ),
-                  ),
                   SizedBox(height: 24),
                   Expanded(
                     child: Container(

@@ -39,6 +39,23 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Color(0xFFFAFAFA),
+        appBar:
+        context.watch<PageProvider>().pageName == ""
+        ? null
+        : AppBar(
+            backgroundColor: Color(0xFF1E1E1E),
+            leading: GestureDetector(
+              onTap: () {
+                if (context.read<PageProvider>().pageIndex == 2) {
+                  context.read<TodoProvider>().changeActive("todo");
+                }
+                context.read<PageProvider>().changePage(0);
+              },
+              child: Icon(Icons.arrow_back_ios_new_rounded, color: Colors.white, size: 20)
+            ),
+            title: Text(context.watch<PageProvider>().pageName, style: GoogleFonts.poppins(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w600)),
+            centerTitle: true
+          ),
         body: SafeArea(
           child: context.read<PageProvider>().page[context.watch<PageProvider>().pageIndex],
         ),
