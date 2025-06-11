@@ -49,7 +49,7 @@ class ToDoList extends StatelessWidget {
                     .where((task) => task["done"])
                     .map((task) => ToDoCard(task: task))
                 ]
-              ),
+              )
             )
           ]
         )
