@@ -20,6 +20,17 @@ class Home extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    IconButton(
+                      style: IconButton.styleFrom(
+                        padding: EdgeInsets.all(0),
+                        hoverColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        highlightColor: Colors.transparent
+                      ),
+                      onPressed: () => Scaffold.of(context).openDrawer(),
+                      icon: Icon(Icons.menu, color: Color(0xFF1E1E1E), size: 30),
+                    ),
+                    SizedBox(height: 20),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.start,
