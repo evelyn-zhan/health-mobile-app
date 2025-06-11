@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:health_mobile_app/components/add_task_button.dart';
 import 'package:health_mobile_app/providers/page_provider.dart';
 import 'package:health_mobile_app/providers/profile_provider.dart';
-import 'package:health_mobile_app/screens/new_task.dart';
 import 'package:provider/provider.dart';
 import 'package:health_mobile_app/providers/todo_provider.dart';
 
@@ -100,17 +100,7 @@ class _MyAppState extends State<MyApp> {
         ),
         floatingActionButton:
         context.watch<PageProvider>().pageIndex == 2
-        ? Builder(
-          builder: (context) {
-            return FloatingActionButton(
-              onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => AddTask())),
-              backgroundColor: Color(0xFF1E1E1E),
-              foregroundColor: Colors.white,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-              child: Icon(Icons.add_rounded, size: 30)
-            );
-          }
-        )
+        ? Builder(builder: (context) => AddTaskButton())
         : null,
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
