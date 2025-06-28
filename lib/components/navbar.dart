@@ -23,12 +23,7 @@ class Navbar extends StatelessWidget {
       "widget": ToDo(),
       "icon": Icons.task_outlined,
       "text": "Tasks",
-    },
-    {
-      "widget": Profile(),
-      "icon": Icons.person_2_rounded,
-      "text": "Profile",
-    },
+    }
   ];
 
   @override
